@@ -1,0 +1,31 @@
+<h1>List</h1>
+<div class="tablebox">
+  <button mat-raised-button routerLink="/home/goodsmanageedit" color="primary">Add</button>
+  <br>
+  <br>
+  <mat-table [dataSource]="goodslist">
+    <ng-container matColumnDef="goodname">
+      <mat-header-cell *matHeaderCellDef>goods name </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.goodname}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="picture">
+      <mat-header-cell *matHeaderCellDef> picture </mat-header-cell>
+      <mat-cell *matCellDef="let row"> <img style="width:100px;" src="/api/uploads/{{ row.mainpng }}" alt="">
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef> price </mat-header-cell>
+      <mat-cell *matCellDef="let row">${{row.price}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> View Application </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button mat-raised-button routerLink="/home/goodsmanageedit/{{row.id}}"
+          color="primary">Edit</button>&nbsp;&nbsp; <button mat-raised-button color="warn"
+          (click)="deleted(row.id)">Remove</button>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="['goodname', 'picture', 'price','id']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['goodname', 'picture','price', 'id']"></mat-row>
+  </mat-table>
+</div>

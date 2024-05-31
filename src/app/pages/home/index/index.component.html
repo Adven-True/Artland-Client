@@ -1,0 +1,136 @@
+<div id="index">
+  <div id="banner">
+    <img src="./../../assets/images/banner1.png" alt="Banner image">
+  </div>
+  <article id="article">
+    <h1>About us</h1>
+    <!-- Angular Material does not provide components directly corresponding to nz dividers, so here we use the hr tag instead -->
+    <hr class="mat-divider">
+    <div class="matlist">
+      <p>Welcome to our online painting e-commerce platform! Whether you are an
+        art lover or a collector, we offer you an unparalleled experience in
+        buying paintings.</p>
+      <p>Here you can discover unique artworks, interact directly with artists
+        from around the world, and purchase your favorite works in a simple and
+        convenient shopping process. Let us bring you endless artistic
+        surprises!</p>
+    </div>
+    <div class="pngline">
+      <img src="./../../assets/images/banner2.png" alt="Image">
+    </div>
+    <h2>predominant feature</h2>
+
+    <hr class="mat-divider">
+    <div class="btn-group major">
+      <mat-grid-list cols="2" rowHeight="2:2.4">
+        <mat-grid-tile>
+          <mat-card class="feature-card">
+            <mat-card-header>
+              <img mat-card-avatar src="https://picsum.photos/200/300" />
+              <mat-card-title>Diverse artwork</mat-card-title>
+            </mat-card-header>
+            <div class="pngline">
+              <img src="https://picsum.photos/200/300" />
+            </div>
+            <mat-card-content>
+              <p> Our platform brings together artists from all over the world
+                to create works in a variety of styles and subject matter.
+                Whether you like abstract, realistic, landscape, human or other
+                types of art, you can find it on our platform. </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button color="primary">know more about
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-card class="feature-card">
+            <mat-card-header>
+              <img mat-card-avatar src="https://picsum.photos/200/300" />
+              <mat-card-title>Shopping protection</mat-card-title>
+            </mat-card-header>
+            <div class="pngline">
+              <img src="https://picsum.photos/200/300" />
+            </div>
+            <mat-card-content>
+              <p> We are committed to providing a safe and secure shopping
+                environment for our customers. Each piece of art is strictly
+                screened and authenticated to ensure its quality and
+                authenticity. In addition, we provide full tracking and
+                insurance services to ensure your shopping experience is
+                worry-free. </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button color="primary">know more about
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-card class="feature-card">
+            <mat-card-header>
+              <img mat-card-avatar src="https://picsum.photos/200/300" />
+              <mat-card-title>Artist interactive platform</mat-card-title>
+            </mat-card-header>
+            <div class="pngline">
+              <img src="https://picsum.photos/200/300" />
+            </div>
+            <mat-card-content>
+              <p> Our platform is not only a shopping place, but also a platform
+                for communication between artists and art lovers. You can
+                communicate directly with artists, understand their inspiration
+                and the meaning behind their stories, and share with them your
+                understanding and love of the work. </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button color="primary">know more about
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-card class="feature-card">
+            <mat-card-header>
+              <img mat-card-avatar src="https://picsum.photos/200/300" />
+              <mat-card-title>Customized service </mat-card-title>
+            </mat-card-header>
+            <div class="pngline">
+              <img src="https://picsum.photos/200/300" />
+            </div>
+            <mat-card-content>
+              <p> If you are not satisfied with the existing work or want to own
+                a unique piece of art, we offer customized services. You can
+                work with our artists to create pieces that meet your needs and
+                make your collection even more personal. </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button color="primary">know more about
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <div class="pngline">
+      <img src="./../../assets/images/banner3.png" alt="Image" style="height: 500px">
+    </div>
+
+    <hr class="mat-divider">
+    <!-- use mat card to display recommended content -->
+    <div id="commendList">
+      <mat-card *ngFor="let datas of commendList" class="commend-card">
+        <mat-card-header>
+          <img mat-card-sm-image src="/api/uploads/{{datas.mainpng}}" alt="Main image">
+        </mat-card-header>
+        <mat-card-content>
+          <p class="tit"><b>{{datas.goodname}}</b></p>
+          <p class="desc">{{datas.gooddesc.substring(0,100)}}...</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="showDetail(datas.id)">view details</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </article>
+</div>

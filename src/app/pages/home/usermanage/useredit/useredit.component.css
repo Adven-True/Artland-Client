@@ -1,0 +1,9 @@
+.example-full-width {
+  width: 100%;
+}
+
+.formbox {
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+}

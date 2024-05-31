@@ -1,0 +1,47 @@
+<div>
+  <mat-toolbar color="primary">
+    <h2>{{uid==''?'add goods':'update goods'}}</h2>
+  </mat-toolbar>
+  <br>
+  <br>
+  <form class="formbox" [formGroup]="goods" (ngSubmit)="submitForm()">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>goods name</mat-label>
+      <input matInput formControlName="goodname"
+        placeholder="pleace input goods name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>choose sort</mat-label>
+      <mat-select formControlName="sort_id">
+        <mat-option *ngFor="let item of sort" [value]="item.id">
+          {{ item.sort }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>price</mat-label>
+      <input matInput formControlName="price" type="number"
+        placeholder="input price">
+    </mat-form-field>
+    <div class="example-full-width">
+      <label for="mainpng" *ngIf="avatarUrl==''"> choose picture <!-- <button mat-raised-button
+          color="primary" (click)="selectImage()"></button> -->
+      </label>
+      <br>
+      <br>
+      <input type="file" id="mainpng" (change)="uploadImage($event)" hidden>
+      <!-- <button mat-raised color="primary" (click)="selectImage()"
+        *ngIf="avatarUrl==''"> choose picture </button> -->
+      <img *ngIf="avatarUrl" [src]="avatarUrl" alt="Preview" class="avatar"
+        style="max-width: 100%; height: auto;" (click)="selectImage()">
+    </div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>input description</mat-label>
+      <textarea matInput formControlName="gooddesc" matTextareaAutosize
+        matAutocompleteTrigger="autosize" rows="10"
+        placeholder="description"></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit"
+      [disabled]="!goods.valid">save {{uid==''?'':'change'}}</button>
+  </form>
+</div>

@@ -1,0 +1,37 @@
+<div id="goodslist">
+  <div class="pngline">
+    <img src="./../../assets/images/banner3.png" alt="Image">
+  </div>
+  <div class="searchline">
+    <mat-form-field appearance="fill">
+      <mat-label>search txt</mat-label>
+      <input type="text" matInput placeholder="" [(ngModel)]="searchtxt" />
+      <button matSuffix mat-icon-button (click)="searchlist()">
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <div class="sortline">
+    <!-- using Angular Material's mat button toggle group to implement single choice groups -->
+    <mat-button-toggle-group [(ngModel)]="sortdata" (ngModelChange)="changeSort($event)">
+      <mat-button-toggle *ngFor="let datas of sort" value="{{datas.id}}">
+        {{datas.sort}}
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  <div style="background: #f4f4f4;padding:30px;" class="mainbox">
+    <div class="mainbox fn-clear">
+      <div class="box fl" *ngFor="let datas of goodsshowlist">
+        <a [routerLink]="'/home/detail/' + datas.id">
+          <mat-card>
+            <img mat-card-image class="png" src="/api/uploads/{{datas.mainpng}}" />
+            <mat-card-header>
+              <mat-card-title>{{datas.goodname}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>{{datas.gooddesc.substring(0,20)}}</mat-card-content>
+          </mat-card>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

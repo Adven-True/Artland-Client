@@ -1,0 +1,11 @@
+h1 {
+  font-size: 30px;
+  line-height: 120px;
+  text-align: center;
+}
+
+.tablebox {
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+}

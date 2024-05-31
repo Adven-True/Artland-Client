@@ -1,0 +1,17 @@
+.example-full-width {
+  width: 100%;
+}
+
+.formbox {
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: 30px auto;
+  object-fit: contain;
+}

@@ -1,0 +1,13 @@
+#null img {
+  display: block;
+  margin: auto;
+}
+
+#null p {
+  text-align: center;
+}
+
+#null #add {
+  display: block;
+  margin: 30px auto;
+}

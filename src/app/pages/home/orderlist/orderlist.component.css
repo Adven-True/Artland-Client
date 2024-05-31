@@ -1,0 +1,10 @@
+.tablebox {
+  max-width: 900px;
+  margin: 30px auto;
+  width: 90%;
+}
+
+.detail {
+  padding: 10px;
+  line-height: 40px;
+}

@@ -1,0 +1,21 @@
+<mat-card class="goods-detail">
+  <mat-card-header>
+    <div mat-card-avatar class="goods-cover" [style.backgroundImage]="'url(/api/uploads/' + goods.mainpng + ')'"></div>
+    <mat-card-title>{{ goods.goodname }}</mat-card-title>
+    <mat-card-subtitle>{{ goods.sort }}</mat-card-subtitle>
+  </mat-card-header>
+  <div class="pngline">
+    <img mat-card-image class="goods-cover" [src]="'/api/uploads/' + goods.mainpng" alt="goods cover">
+  </div>
+  <mat-card-content>
+    <p class="desc">
+      {{ goods.gooddesc }}
+    </p>
+    <p class="price"> price: ${{goods.price}} </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="addShopcard()">Add to
+      Shopcart</button> &nbsp; &nbsp; &nbsp; <button mat-raised-button color="primary"
+      (click)="openConfirmDialog()">Buy</button>
+  </mat-card-actions>
+</mat-card>

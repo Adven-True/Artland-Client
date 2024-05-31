@@ -1,0 +1,31 @@
+<mat-toolbar color="accent">
+  <img class="logo" src="./../assets/images/logo.png" alt="">
+  <div class="nav" *ngIf="loginState!=''">
+    <button mat-button [class.primary]="isActive('/home/index')" routerLinkActive="active"
+      routerLink="/home/index">Home</button>
+    <div class="morenav" *ngIf="loginState!=''">
+      <button mat-button routerLink="/home/list" [class.primary]="isActive('/home/list')" routerLinkActive="active"
+        *ngIf="username!='admin'">List</button>
+      <button mat-button routerLink="/home/orderlist" [class.primary]="isActive('/home/orderlist')"
+        routerLinkActive="active" *ngIf="username!='admin'">Order </button>
+      <button mat-button routerLink="/home/shopcard" [class.primary]="isActive('/home/shopcard')"
+        routerLinkActive="active" *ngIf="username!='admin'">Shopcart </button>
+    </div>
+    <div class="morenav" *ngIf="loginState!=''">
+      <button mat-button routerLink="/home/goodsmanage" [class.primary]="isActive('/home/goodsmanage')"
+        routerLinkActive="active" *ngIf="username=='admin'">Goods</button>
+      <button mat-button routerLink="/home/ordermanagelist" [class.primary]="isActive('/home/ordermanagelist')"
+        routerLinkActive="active" *ngIf="username=='admin'">All Orders</button>
+      <button mat-button routerLink="/home/usermanagelist" [class.primary]="isActive('/home/usermanage')"
+        routerLinkActive="active" *ngIf="username=='admin'">User </button>
+    </div>
+  </div>
+  <div class="fr" *ngIf="loginState!=''"> <button mat-button [matMenuTriggerFor]="menu">username:{{username}}</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="quit()">quit</button>
+    </mat-menu>
+  </div>
+  <div *ngIf="loginState==''" class="fr">
+    <a mat-button routerLink="/account/login" class="btns">Login</a>
+  </div>
+</mat-toolbar>

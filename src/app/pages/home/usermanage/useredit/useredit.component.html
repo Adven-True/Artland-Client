@@ -1,0 +1,38 @@
+<div>
+  <mat-toolbar color="primary">
+    <h2>{{uid==''?'add user':'update user'}}</h2>
+  </mat-toolbar>
+  <br>
+  <br>
+  <form class="formbox" [formGroup]="userdata" (ngSubmit)="submitForm()">
+    <mat-form-field class="example-full-width" appearance="fill"
+      *ngIf="uid==''">
+      <mat-label>username</mat-label>
+      <input matInput formControlName="username"
+        placeholder="pleace input username">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill"
+      *ngIf="uid!=''">
+      <mat-label>username</mat-label>
+      <input matInput formControlName="username"
+        placeholder="pleace input username" [disabled]="uid!=''">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>password</mat-label>
+      <input matInput formControlName="password" type="text"
+        placeholder="input password">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>email</mat-label>
+      <input matInput formControlName="email" type="text"
+        placeholder="input email">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>mobile</mat-label>
+      <input matInput formControlName="mobile" type="text"
+        placeholder="input mobile">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">save
+      {{uid==''?'':'change'}}</button>
+  </form>
+</div>

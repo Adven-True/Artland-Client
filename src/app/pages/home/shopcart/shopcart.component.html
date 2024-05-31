@@ -1,0 +1,49 @@
+<div class="tablebox">
+  <table mat-table [dataSource]="cartItems" class="mat-elevation-z8">
+    <ng-container matColumnDef="goodsid">
+      <th mat-header-cell *matHeaderCellDef> Goods ID</th>
+      <td mat-cell *matCellDef="let ele"> {{ele.goodsid}} </td>
+    </ng-container>
+    <ng-container matColumnDef="goodname">
+      <th mat-header-cell *matHeaderCellDef> Good Name</th>
+      <td mat-cell *matCellDef="let ele"> {{ele.goodname}} </td>
+    </ng-container>
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef>Price</th>
+      <td mat-cell *matCellDef="let ele"> {{ele.price}} </td>
+    </ng-container>
+    <ng-container matColumnDef="sum">
+      <th mat-header-cell *matHeaderCellDef>Quantity</th>
+      <td mat-cell *matCellDef="let ele" class="quatityline">
+        <button mat-icon-button (click)="decreaseItem(ele)">
+          <mat-icon>remove</mat-icon>
+        </button>
+        <span>{{ ele.sum }}</span>
+        <button mat-icon-button (click)="increaseItem(ele)">
+          <mat-icon>add</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let ele">
+        <button mat-icon-button (click)="deleteItem(ele)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row
+      *matHeaderRowDef="['goodsid', 'goodname', 'price', 'sum', 'actions']">
+    </tr>
+    <tr mat-row
+      *matRowDef="let row; columns: ['goodsid', 'goodname', 'price', 'sum', 'actions'];">
+    </tr>
+  </table>
+  <div class="priceline fn-clear">
+    <span class="fl">Total Price: {{ totalPrice | currency }}</span>
+    <div class="fr">
+      <button mat-raised-button color="primary" (click)="submit()">Buy</button>
+    </div>
+  </div>
+</div>

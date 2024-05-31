@@ -1,0 +1,24 @@
+.tablebox {
+  max-width: 900px;
+  margin: 30px auto;
+  width: 90%;
+}
+.quatityline span {
+  display: inline-block;
+  vertical-align: super;
+}
+.priceline span {
+  font-size: 24px;
+  line-height: 80px;
+  text-align: left;
+}
+.fn-clear {
+  overflow: hidden;
+}
+.fn-clear .fl {
+  float: left;
+}
+.fn-clear .fr {
+  float: right;
+  margin: 30px;
+}

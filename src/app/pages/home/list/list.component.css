@@ -1,0 +1,87 @@
+.searchline {
+  text-align: center;
+  display: block;
+  margin: 30px auto;
+}
+
+.sortline {
+  text-align: center;
+}
+
+.mainbox {
+  max-width: 900px;
+  margin: 30px auto;
+  width: 100%;
+}
+
+.mainbox .box {
+  width: 31%;
+  margin: 1%;
+}
+
+.mainbox .box .png {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.mainbox .mat-mdc-card {
+  background-color: #fff;
+}
+
+.mainbox .mat-mdc-card .mat-mdc-card-title {
+  font-weight: bold;
+  font-size: 24px;
+  color: #333;
+  text-decoration: none;
+}
+
+.mainbox .mat-mdc-card .mat-mdc-card-content {
+  line-height: 30px;
+  padding: 10px;
+  height: 60px;
+  text-decoration: none;
+  color: #666;
+}
+
+* {
+  text-decoration: none;
+}
+
+.fn-clear {
+  overflow: hidden;
+}
+
+.fn-clear .fl {
+  float: left;
+}
+
+.fn-clear .fr {
+  float: right;
+}
+
+.pngline {
+  height: 30vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.pngline img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+.card {
+  max-width: 300px;
+}
+
+.mat-card-image {
+  max-width: 100%;
+  height: auto;
+}

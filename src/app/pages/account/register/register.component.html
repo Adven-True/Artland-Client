@@ -1,0 +1,28 @@
+<div id="login">
+  <div class="example-form login-form">
+    <h2>Register</h2>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>username</mat-label>
+      <input matInput name="username" [(ngModel)]="form.username"
+        placeholder="please enter username, only numbers and letters less than 10">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>password</mat-label>
+      <input matInput name="password" [(ngModel)]="form.password" type="password"
+        placeholder="please enter password, only numbers,letters and !@#$%(6-12 digits)">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>email</mat-label>
+      <input matInput name="email" [(ngModel)]="form.email" placeholder="please enter email">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>phone number</mat-label>
+      <input matInput name="mobile" [(ngModel)]="form.mobile" placeholder="please enter phone number"
+        autocomplete="off">
+    </mat-form-field>
+    <div class="fn-clear">
+      <button mat-raised-button color="primary" (click)="subForm()"> Register
+      </button> &nbsp; <button mat-button color="primary" (click)="toLogin()">back login</button>
+    </div>
+  </div>
+</div>
