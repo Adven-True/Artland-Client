@@ -1,4 +1,4 @@
-The front end part of Artland. /n
---  npm install
---  npm run start
-listen to loacalhost:3001
+The front end part of Artland. <br>
+--  npm install <br>
+--  npm run start <br>
+listen to loacalhost:3001 <br>
